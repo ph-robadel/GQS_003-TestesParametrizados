@@ -4,7 +4,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.10+8-LTS-162"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-11.0.10/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/ph/git/ufes/GQS-PlanejamentoTestes/ParameterizedTests"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/ph/git/ufes/GQS_003-TestesParametrizados/ParameterizedTests"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/ph/git/ufes/GQS-PlanejamentoTestes/ParameterizedTests"/>
+    <property name="user.dir" value="/home/ph/git/ufes/GQS_003-TestesParametrizados/ParameterizedTests"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="11.0.10+8-LTS-162"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
@@ -42,7 +42,7 @@
     <property name="java.class.path" value="/usr/local/netbeans-11.1/netbeans/java/maven/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=/usr/local/netbeans-11.1/netbeans/java/maven-nblib/netbeans-eventspy.jar clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=/usr/local/netbeans-11.1/netbeans/java/maven-nblib/netbeans-eventspy.jar test"/>
     <property name="java.home" value="/usr/lib/jvm/jdk-11.0.10"/>
     <property name="user.language" value="pt"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -60,11 +60,11 @@
     <property name="java.vendor.version" value="18.9"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="br.ufes.FibonacciTest" name="test[0]" time="0.006"/>
-  <testcase classname="br.ufes.FibonacciTest" name="test[1]" time="0"/>
-  <testcase classname="br.ufes.FibonacciTest" name="test[2]" time="0"/>
-  <testcase classname="br.ufes.FibonacciTest" name="test[3]" time="0"/>
-  <testcase classname="br.ufes.FibonacciTest" name="test[4]" time="0"/>
-  <testcase classname="br.ufes.FibonacciTest" name="test[5]" time="0"/>
-  <testcase classname="br.ufes.FibonacciTest" name="test[6]" time="0"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[0: fib(0)=0]" time="0.006"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[1: fib(1)=1]" time="0"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[2: fib(2)=1]" time="0"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[3: fib(3)=2]" time="0"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[4: fib(4)=3]" time="0"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[5: fib(5)=5]" time="0"/>
+  <testcase classname="br.ufes.FibonacciTest" name="test[6: fib(6)=8]" time="0"/>
 </testsuite>
