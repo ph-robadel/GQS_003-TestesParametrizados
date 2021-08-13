@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: br.ufes.TestesParametrizados
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.129 s - in br.ufes.TestesParametrizados
+Tests run: 21, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.241 s <<< FAILURE! - in br.ufes.TestesParametrizados
+convertWithCustomHexConverter{int, int}[1]  Time elapsed: 0.031 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: Error converting parameter at index 1: Can only convert to type class java.lang.Integer
+Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Can only convert to type class java.lang.Integer
+
+convertWithCustomHexConverter{int, int}[2]  Time elapsed: 0.002 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: Error converting parameter at index 1: Can only convert to type class java.lang.Integer
+Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Can only convert to type class java.lang.Integer
+
+convertWithCustomHexConverter{int, int}[3]  Time elapsed: 0.002 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: Error converting parameter at index 1: Can only convert to type class java.lang.Integer
+Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Can only convert to type class java.lang.Integer
+

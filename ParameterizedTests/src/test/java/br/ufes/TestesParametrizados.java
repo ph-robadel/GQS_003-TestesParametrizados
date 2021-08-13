@@ -2,6 +2,7 @@ package br.ufes;
 
 import java.text.DateFormatSymbols;
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.stream.Stream;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,7 +10,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import static org.junit.Assert.*;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.AggregateWith;
+import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -80,6 +84,61 @@ public class TestesParametrizados {
     })
     void readTasks(String title, String status, LocalDate date) {
         System.out.printf("%s, %s, %s", title, status, date);
+    }
+    
+//    @ParameterizedTest
+//    @CsvFileSource(resources = "/tasks.csv")
+//    void readTasksFile(String title, String status, LocalDate date) {
+//        System.out.printf("%s, %s, %s", title, status, date);
+//    }
+    
+    @ParameterizedTest
+    @CsvSource(", IN_PROGRESS, 2020-12-20")
+    void nullArgumentCsv(String title, String status, LocalDate date) {
+        assertNull(title);
+    }
+    
+    @ParameterizedTest
+    @CsvSource("'', IN_PROGRESS, 2020-12-20")
+    void emptyArgument(String title, String status, LocalDate date) {
+        assertTrue(title.isEmpty());
+    }
+    
+    @ParameterizedTest
+    @CsvSource(value = "NULL, IN_PROGRESS, 2020-12-20", nullValues = "NULL")
+    void customNullArgument(String title, String status, LocalDate date) {
+        assertNull(title);
+    }
+    
+    @ParameterizedTest
+    @ValueSource(strings = { "2018-01-01", "2018-01-31" })
+    void convertStringToLocalDate(LocalDate localDate) {
+        assertEquals(Month.JANUARY, localDate.getMonth());
+    }
+    
+    @ParameterizedTest
+    @CsvSource("John Doe")
+    void fallbackStringConversion(Person person) {
+        assertEquals("John Doe", person.getNome());
+    }
+    
+    @ParameterizedTest
+    @CsvSource({
+            "15, F",
+            "16, 10",
+            "233, E9"
+    })
+    void convertWithCustomHexConverter(int decimal, @ConvertWith(HexConverter.class) int hex) {
+        assertEquals(decimal, hex);
+    }
+    
+    @ParameterizedTest
+    @CsvSource({
+            "Write a blog post, IN_PROGRESS, 2020-12-20",
+            "Wash the car, OPENED, 2020-12-15"
+    })
+    void aggregateArgumentsWithAggregator(@AggregateWith(TaskAggregator.class) Task task) {
+        System.out.println(task);
     }
     
     private boolean isPalindrome(String palavra){
